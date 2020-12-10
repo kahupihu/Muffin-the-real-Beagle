@@ -44,6 +44,7 @@ function draw(){
   console.log("Pointer Co-ordinates:- "+World.mouseX+" , "+World.mouseY);
   
   if(gs===0){
+    bg.velocityX=0;
     muffin.changeAnimation("sleep",start);
     textSize(30);
     stroke(0);
