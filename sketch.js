@@ -64,7 +64,7 @@ function draw(){
     textSize(23);
     fill("green");
     text("<--- Muffin ;)",191,290);
-    if(keyWentDown("space")){gs=1;}
+    if(keyWentDown("space")||touches.length>0){gs=1; touches=[]; }
   }
   
   else if(gs===1){
@@ -73,7 +73,7 @@ function draw(){
        spawnSk();
        bg.velocityX=-6;
        if(bg.x<180){bg.x=bg.width/2;}
-       if(keyDown("space")&&muffin.y>(316-size*50*6)){muffin.velocityY=-18;}
+       if(keyDown("space")||touches.length>0 &&muffin.y>(316-size*50*6)){muffin.velocityY=-18; touches=[]; }
        muffin.velocityY=muffin.velocityY+0.8;
        muffin.collide(Iground);
        textSize(17);
