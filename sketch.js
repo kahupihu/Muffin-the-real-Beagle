@@ -102,7 +102,7 @@ function draw(){
   else if(gs===2){
     bg.velocityX=0;
     skG.destroyEach();
-    bsK.destroyEach();
+    btK.destroyEach();
     score=0;
     Iscore=0;
     hit=0;
