@@ -44,6 +44,7 @@ function draw(){
   console.log("Pointer Co-ordinates:- "+World.mouseX+" , "+World.mouseY);
   
   if(gs===0){
+    muffin.changeAnimation("sleep",start);
     textSize(30);
     stroke(0);
     strokeWeight(2);
@@ -73,7 +74,7 @@ function draw(){
        spawnSk();
        bg.velocityX=-6;
        if(bg.x<180){bg.x=bg.width/2;}
-       if(keyDown("space")||touches.length>0 &&muffin.y>(316-size*50*6)){muffin.velocityY=-18; touches=[]; }
+       if(keyDown("space")  &&muffin.y>(316-size*50*6)||touches.length>0 &&muffin.y>(316-size*50*6)){muffin.velocityY=-18; touches=[]; }
        muffin.velocityY=muffin.velocityY+0.8;
        muffin.collide(Iground);
        textSize(17);
@@ -99,12 +100,21 @@ function draw(){
        }
 
   else if(gs===2){
+    g.velocityX=0;
+    skG.destroyEach();
+    bsK.destroyEach();
+    score=0;
+    Iscore=0;
+    hit=0;
+    size=0;
     background(0);
     textSize(50);
     fill("red");
     strokeWeight(2);
     stroke("red");
     text("You Lost! :(", 260, 185);
+    text("Press space to restart.",160,205);
+    if(keyWentDown("space")||touches.length>0){gs=0; touches=[]; }
   }
 
 }
