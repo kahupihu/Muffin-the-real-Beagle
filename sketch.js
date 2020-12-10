@@ -100,7 +100,6 @@ function draw(){
        }
 
   else if(gs===2){
-    bg.velocityX=0;
     skG.destroyEach();
     btK.destroyEach();
     score=0;
