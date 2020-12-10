@@ -101,6 +101,9 @@ function draw(){
        }
 
   else if(gs===2){
+    bg.velocityX=0;
+    muffin.velocityY=0;
+    muffin.y=300;
     skG.destroyEach();
     btG.destroyEach();
     score=0;
@@ -113,7 +116,7 @@ function draw(){
     strokeWeight(2);
     stroke("red");
     text("You Lost! :(", 260, 185);
-    text("Press space to restart.",160,205);
+    text("Press space to restart.",150,235);
     if(keyWentDown("space")||touches.length>0){gs=0; touches=[]; }
   }
 
