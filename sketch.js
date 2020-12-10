@@ -14,7 +14,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(window.width*2,window.height);
+  createCanvas(800,400);
   muffin=createSprite(100,300,10,10);
   muffin.addAnimation("sleep",start);
   muffin.addAnimation("walking",walking);
